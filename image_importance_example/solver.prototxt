@@ -1,0 +1,14 @@
+net: "image_importance_example/train_val.prototxt"
+test_iter: 500
+test_interval: 5000
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.2
+stepsize: 40000
+display: 500
+max_iter: 100000
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 10000
+snapshot_prefix: "image_importance_example/pr_train"
+solver_mode: GPU
