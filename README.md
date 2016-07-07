@@ -1,3 +1,22 @@
+# Event-specific Image Importance
+This is a implementation of the paper "Event-specific Image Importance". Project Page: http://acsweb.ucsd.edu/~yuw176/event-curation.html
+- For Piecewise Ranking Loss implementation, please refer to caffe/src/caffe/layers/piecewise_ranking_loss_layer.cpp.  
+- Piecewise Ranking loss has several parameters: 
+  * L2 or L1 (default L2)
+  * two margins (default margin1=0.1, margin2=0.3)
+- For example of training a Siamese network for event-specific image importance on CUFED dataset, please refer to caffe/image_importance_example/
+
+
+If you find this work is helpful for your research, please cite:
+
+    @article{Wang_16_CVPR,
+      title={Event-specific Image Importance},
+      Author = {Wang, Yufei and Lin, Zhe and Shen, Xiaohui and Mech, Radomir and Miller, Gavin and Cottrell, Garrison. W.},
+      booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+      year={2016}    
+    }
+
+-------------
 # Caffe
 
 [![Build Status](https://travis-ci.org/BVLC/caffe.svg?branch=master)](https://travis-ci.org/BVLC/caffe)
