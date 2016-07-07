@@ -306,7 +306,7 @@ message ParamSpec {
 // NOTE
 // Update the next available ID when you add a new LayerParameter field.
 //
-// LayerParameter next available layer-specific ID: 147 (last added: recurrent_param)
+// LayerParameter next available layer-specific ID: 148 (last added: piecewise_ranking_loss)
 message LayerParameter {
   optional string name = 1; // the layer name
   optional string type = 2; // the layer type
@@ -364,6 +364,7 @@ message LayerParameter {
   optional BiasParameter bias_param = 141;
   optional ConcatParameter concat_param = 104;
   optional ContrastiveLossParameter contrastive_loss_param = 105;
+  optional PRankingLossParameter piecewise_ranking_loss_param = 147;
   optional ConvolutionParameter convolution_param = 106;
   optional CropParameter crop_param = 144;
   optional DataParameter data_param = 107;
@@ -552,6 +553,16 @@ message ContrastiveLossParameter {
   // reproduce existing models and results
   optional bool legacy_version = 2 [default = false];
 }
+
+
+message PRankingLossParameter {
+  // margin for pair
+  optional float margin1 = 3 [default = 0.1];
+  optional float margin2 = 4 [default = 0.3];
+  // Specify the Norm to use L1 or L2
+  optional bool norml2 = 2 [default = true];
+}
+
 
 message ConvolutionParameter {
   optional uint32 num_output = 1; // The number of outputs for the layer
